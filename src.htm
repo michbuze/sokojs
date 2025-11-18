@@ -1,0 +1,124 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<HEAD><TITLE>SokoJS : Boxworld / Sokoban Javascript online free game</TITLE>
+<meta content="text/html" charset="UTF-8" http-equiv="Content-Type"><!--TODO:og:image-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<script type="text/javascript" src="../libs/jquery-3.7.1.min.js"></script> 
+<script>
+$(document).ready(function(){
+$.ajax({async:false, withCredentials:true, type:"GET", url:"../menu/menu.htm", 	success:function(res){$("#header").html(res);},		error:function(res){$("#header").html(res.responseText);}}); 
+$.ajax({async:false, withCredentials:true, type:"GET", url:"../menu/footer.htm", 	success:function(res){$("#footer").html(res);}, 	error:function(res){$("#footer").html(res.responseText);}});
+$.ajax({async:false, withCredentials:true, type:"GET", url:"../menu/tophead.htm", 	success:function(res){$("#tophead").html(res);},	error:function(res){$("#tophead").html(res.responseText);}});});
+</script>
+</head>
+<body>
+<div id="header">Chargement de l'entête de la page en cours...</div>
+<!--<span class="fillh"><br></span>-->
+<div class=Titre>
+SokoJS
+</div>					
+<div id="tophead">Chargement en cours...</div>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<div class=texte><article><div id=buttons class=buttons><p>
+
+
+<li><a target="boxworld" href="sokojs.htm">Jouez à Sokoban (Boxworld) !</a></li>
+<li><a target="boxworld" href="http://buze.michel.chez.com/Boxworld/sokojs.htm">
+Adresse en ligne : http://vu.fr/soko (Raccourci vers : http://buze.michel.chez.com/Boxworld/sokojs.htm</a></li>
+<li><a target="michbuze" href="http://buze.michel.chez.com"> Auteur : Michel BUZE (http://buze.michel.chez.com)</a></li>
+<hr>
+
+<li><a href="http://buze.michel.chez.com/sokojs.zip">
+Cliquer ici pour télécharger l'archive sokojs.zip contenant l'ensemble des fichiers qui constituent le jeu</a></li><hr>
+
+<li><a href="mailto:michel.buze@gmail.com">
+Email : michel.buze@gmail.com</a></li>
+
+<!--<li><a target="weborama" href="http://vote.weborama.fr/fcgi-bin/vote.fcgi?8740">
+Voter pour ce jeu au WebOrama</a></li>-->
+
+<li><a target="livreor" href="http://www.free-livredor.com/livre-d-or-des-sites-de-michel-buze-60836-1.html">
+Laisser un mot sur le LIVRE D'OR</a></li>
+</ul>
+
+<hr><span class="h">Règles du Jeu : </span>
+
+<br>
+Vous êtes Sokoban <img src="9.gif">, enfermé dans un entrepot (divisé en cases carrées),
+vous vous déplacez de case en case (vers le haut <img src="8.gif">, le bas <img src="9.gif">, la gauche <img src="6.gif"> ou la droite <img src="7.gif">;
+avec les flèches du clavier ou la souris).<br>
+Une case peut comporter un mur <img src="2.gif">, une caisse <img src="4.gif">, ou une zone de rangement pour caisses
+(boule jaune) <img src="5.gif">.<font size=1><br><br></font>
+Un déplacement n'est possible que si la case de destination est vide (c’est-à-dire qu'il ne s'agit ni d'un mur, ni d'une caisse; en revanche, il peut s'agir d'une zone de rangement).<font size=1><br><br></font>
+Si cette case contient une caisse et que la suivante (dans la même direction) est vide (ou une zone de rangement), le mouvement est aussi autorisé :
+vous poussez alors la caisse dans la case vide et venez prendre sa place.<br>
+Avant : <img src="1.gif"><img src="7.gif"><img src="4.gif"><img src="5.gif"><img src="1.gif">
+Après : <img src="1.gif"><img src="1.gif"><img src="7.gif"><img src="3.gif"><img src="1.gif">
+
+<font size=1><br><br></font>
+Un niveau est résolu dès que toutes les caisses sont rangées (une caisse jaune devient rouge quand elle est rangée).
+Réussir est un vrai casse-tête (les deux premiers niveaux sont hyper simples pour vous familiariser, à partir du niveau 3, c'est moins évident...)<br>
+L'idéal est d'essayer de réussir avec le moins de déplacements et de poussées !
+
+<font size=1><br><br></font>
+(Remarque : les règles ne permettent pas de tirer une caisse !).<br>
+<pre>
+On ne tire pas : Avant : <img src="1.gif"><img src="1.gif"><img src="6.gif"><img src="4.gif"><img src="1.gif"> Après : <img src="1.gif"><img src="6.gif"><img src="1.gif"><img src="4.gif"><img src="1.gif"><br>
+Si on pouvait  : Avant : <img src="1.gif"><img src="1.gif"><img src="6.gif"><img src="4.gif"><img src="1.gif"> Après : <img src="1.gif"><img src="6.gif"><img src="4.gif"><img src="1.gif"><img src="1.gif">
+</pre>
+
+<hr>
+<img src="1.gif"> : une case vide
+<img src="2.gif"> : un mur<br>
+<img src="4.gif"> : une caisse
+<img src="3.gif"> : une caisse rangée<br>
+<img src="5.gif"> : une zone de rangement<br>
+<img src="9.gif"> : le personnage Sokoban (profession  : magasinier)
+<br>
+<hr>
+
+<span class="h">Historique :</span>
+
+Sokoban est un petit jeu vidéo de type "casse-tête" mais avec des allures de jeu d'arcade.<br>
+La version originale a été écrite par le japonais Hiroyuki Imabayashi en 1982 pour l'ordinateur Nec PC-8801 et comportait 50 niveaux.<br>
+En 1988, il sera adapté pour PC.<br>
+En 1991, Jeng Long Jiang propose Boxworld, une autre version pour PC, avec 100 niveaux différents de Sokoban, et qui a été très populaire.<br>
+Le code source n'est pas disponible, mais on trouve la description des niveaux ici (remarque : il manque les niveaux 61 et 62, apparemment impossibles) :<br>
+
+<!--KO:http://games.knet.ca/modules/pnFlashGames/games/boxesLevels-->
+<a target="boxesLevels" href="http://www.quizspiel-online.de/modules/pnFlashGames/games/boxesLevels/">
+http://www.quizspiel-online.de/modules/pnFlashGames/games/boxesLevels/</a>
+
+<br>
+J'ai commencé à écrire cette version JAVASCRIPT en janvier 1998.<br>
+Elle a été mise à jour en janvier 2005 (utilisation du clavier, écriture de cette page d'aide, 30 niveaux au lieu de 5...), puis mai 2006 (98 niveaux).
+<br>
+<a target=wikiSokoban href=http://fr.wikipedia.org/wiki/Sokoban>
+L'encyclopédie Wikipédia propose un article à ce sujet : http://fr.wikipedia.org/wiki/Sokoban<br>
+(vous pouvez le modifier !)</a>
+
+<hr>
+<a target=githubsokojs href=https://github.com/michbuze/sokojs>
+Code source sur GitHub : https://github.com/michbuze/sokojs</a>
+
+<hr>
+<a target=frama href=https://framagames.org/sokojs/sokojs.htm>
+Framasoft, une plateforme française de Logiciels Libres propose ce jeu dans son espace "FramaGames", sous le titre "Rangez des caisses" : 
+https://framagames.org/sokojs/sokojs.htm</a><br>
+<a target=githubframa href=https://github.com/framasoft/framagames/tree/master/sokojs>
+Le code source sous GitHub ! https://github.com/framasoft/framagames/tree/master/sokojs</a>
+
+<hr>
+<a target=lindsey href=http://spontaneouslindsey.franceserv.info/sokoban/>
+Le site "Lindsey's Fan Art Time", créé par un fan de la violoniste Lindsey Stirling
+propose sa variante à ce jeu : "The Legend Of Lindsey : Sokoban Game.<br>
+Ce sont des violons qu'il faut ranger dans leurs étuis à la place des caisses dans leur zones de rangement :
+http://spontaneouslindsey.franceserv.info/sokoban/</a>
+
+<!--
+
+<!---
+http://spontaneouslindsey.franceserv.info/?p=games
+-->
+</div></div><div id="footer">Chargement du pied de page en cours...</div>
+</html>

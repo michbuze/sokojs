@@ -1,0 +1,11 @@
+# Ignorer les fichiers compressés et exécutables
+*.zip
+*.exe
+
+# Ignorer tous les .txt, sauf ceux explicitement listés ci-dessous
+*.txt
+!lisezmoi.txt
+
+# Ignorer ces fichiers
+src-todo.htm
+src2018.htm
